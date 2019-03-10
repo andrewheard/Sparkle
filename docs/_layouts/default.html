@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href="https://sparkle-project.org{{ page.url  | replace: '/index.html' , '/' }}" />
+    <title>{% if page.title %} {{ page.title }} - {% endif %} {{ site.title }}</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#0099f0" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#0099f0" />
+
+    <link href="/css/main.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+    //<![CDATA[
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-52386963-1', 'auto');
+    ga('send', 'pageview');
+
+    // on GitHub pages we can't distinguish server-side between CDN and users' visits
+    if (/^(w{1,3}\.)?sparkle-project\.(com|org|github\.io)$/.test(location.hostname)) {
+        var newValue = 'sparkle-project.org';
+        if (location.hostname !== newValue)
+            location.hostname = newValue;
+    }
+    //]]>
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse {{ page.navbar_extra_styles }}">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/images/icon.png" srcset="/images/icon@2x.png" alt="" /> Sparkle</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="{% if page.id == "index" %} active {% endif %}"><a href="/">Home</a></li>
+            <li class="{% if page.id == "about" %} active {% endif %}"><a href="/about/">About</a></li>
+            <li class="{% if page.id == "documentation" %} active {% endif %}"><a href="/documentation/">Documentation</a></li>
+            <li><a href="//github.com/{{ site.github_username }}/Sparkle">GitHub Project</a></li>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    {{ content }}
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <footer>
+            <p>©&#8202;{{ site.time | date: '%Y' }} Sparkle Project. All Rights Reserved.</p>
+            <p>This website is <a rel="alternate" href="//github.com/{{ site.github_username }}/sparkle-project.github.io/blob/master/{{page.path}}">open source</a>.</p>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/retina.js"></script>
+  </body>
+</html>

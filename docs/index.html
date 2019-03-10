@@ -1,0 +1,83 @@
+---
+layout: default
+id: index
+navbar_extra_styles: navbar-home
+---
+<div class="jumbotron sparkle-jumbotron">
+  <div class="container">
+    <p><img src="/images/screenshot-noshadow.png" srcset="/images/screenshot-noshadow@2x.png" class="img screenshot" alt="Sparkle Test App Screenshot" /></p>
+    <p class="tag-line">Sparkle is an easy-to-use software update framework for macOS applications.</p>
+    <p>
+      <a class="btn-download" href="//github.com/{{ site.github_username }}/Sparkle/releases/latest" role="button">Download latest</a>
+      <a class="btn-cocoapods" href="//cocoapods.org/pods/Sparkle" role="button">CocoaPod</a>
+    </p>
+  </div>
+</div>
+
+<div class="container sparkle-features">
+  <div class="row">
+    <div class="card col-md-6">
+      <h2>Open Source</h2>
+      <p>Sparkle is open source software available under the permissive MIT license, and is developed on GitHub by the Sparkle Project with the help of dozens of valued contributors.</p>
+    </div>
+    <div class="card col-md-6">
+      <h2>Modern</h2>
+      <p>Sparkle is kept up to date with the latest Apple technologies: it uses ARC and Auto Layout and supports macOS versions 10.7 through 10.11 and Xcode 5.0 through 7.0.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card col-md-6">
+      <h2>Secure</h2>
+      <p>Supports Sparkle's own <abbr title="ed25519">EdDSA</abbr> signatures as well as Apple Code Signing, for ultra-secure updates. Sparkle also supports authentication for installing in secure locations. Support for sandboxing is currently under development.</p>
+    </div>
+    <div class="card col-md-6">
+      <h2>Flexible</h2>
+      <p>Requires no code in your app, but also provides deep delegate support for maximum customization. Developers can make Sparkle work exactly as they need, and users can make Sparkle work as they prefer.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card col-md-6">
+     <h2>Seamless</h2>
+     <p>Your own branding, icons and app name are used - there's no mention of Sparkle. Works with any macOS app, whether it uses Cocoa, Qt, Xamarin, or otherwise.</p>
+    </div>
+    <div class="card col-md-6">
+      <h2>Automatic</h2>
+      <p>True self-updating - no work required from the user. Users can also choose to automatically download and install all updates silently in the background.</p>
+    </div>
+  </div>
+</div> <!-- /container -->
+
+<div class="jumbotron sparkle-users-jumbotron">
+  <div class="container">
+    <p>With Sparkle, you're in good company. Here are just a few of the thousands of apps which use Sparkle</p>
+    <ul class="icons">
+      <li><img src="/images/app-icons/adium.png" alt="Adium" title="Adium" /></li>
+      <li><img src="/images/app-icons/transmission.png" alt="Transmission" title="Transmission" /></li>
+      <li><img src="/images/app-icons/appzapper.png" alt="App Zapper" title="App Zapper" /></li>
+      <li><img src="/images/app-icons/cyberduck.png" alt="Cyberduck" title="Cyberduck" /></li>
+      <li><img src="/images/app-icons/istumbler.png" alt="iStumbler" title="iStumbler" /></li>
+      <li><img src="/images/app-icons/colloquy.png" alt="Colloquy" title="Colloquy" /></li>
+      <li><img src="/images/app-icons/cssedit.png" alt="CSS Edit" title="CSS Edit" /></li>
+      <li><img src="/images/app-icons/vienna.png" alt="Vienna" title="Vienna" /></li>
+      <li><img src="/images/app-icons/iterm.png" alt="iTerm" title="iTerm" /></li>
+      <li><img src="/images/app-icons/miro.png" alt="Miro" title="Miro" /></li>
+      <li><img src="/images/app-icons/coda.png" alt="Coda" title="Coda" /></li>
+      <li><img src="/images/app-icons/pixelmator.png" alt="Pixelmator" title="Pixelmator" /></li>
+      <li><img src="/images/app-icons/virtuedesktops.png" alt="Virtue Desktops" title="Virtue Desktops" /></li>
+      <li><img src="/images/app-icons/cocktail.png" alt="Cocktail" title="Cocktail" /></li>
+      <li><img src="/images/app-icons/coversutra.png" alt="Coversutra" title="Coversutra" /></li>
+      <li><img src="/images/app-icons/xslimmer.png" alt="Xslimmer" title="Xslimmer" /></li>
+      <li><img src="/images/app-icons/journler.png" alt="Journler" title="Journler" /></li>
+      <li><img src="/images/app-icons/subethaedit.png" alt="SubEthaEdit" title="SubEthaEdit" /></li>
+    </ul>
+  </div>
+</div>
+<script>
+$(function() {
+  $.getJSON("https://api.github.com/repos/{{ site.github_username }}/Sparkle/releases/latest", function (data) {
+    var button = $('.download-button');
+    button.text('Download v' + data.tag_name);
+    button.attr('href', data.assets[0].browser_download_url);
+  });
+});
+</script>
