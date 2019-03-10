@@ -25,7 +25,7 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
-	<string>http://www.andymatuschak.org/files/sparkletestcast.xml</string>
+	<string>https://andrewheard.github.io/Sparkle-Legacy/files/sparkletestcast.xml</string>
 	<key>SUEnableSystemProfiling</key>
 	<true/>
 	<key>SUPublicDSAKeyFile</key>
